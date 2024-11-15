@@ -20,8 +20,7 @@ export const shuffle = (array) => {
 
 export const handlePlayAudio = (audioUrl) => {
   const audio = new Audio(
-    audioUrl ||
-      'https://www.oxfordlearnersdictionaries.com/media/english/uk_pron/h/hel/hello/hello__1_gb_2.mp3'
+    audioUrl
   );
   audio.play().catch((error) => {
     console.error('Audio play failed', error);

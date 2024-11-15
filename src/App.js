@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 // import { initializeIcons } from '@fluentui/font-icons-mdl2';
 import Vocabulary from './components/Vocabulary';
 import Quiz from './components/Quiz';
-import { Button } from '@fluentui/react-components';
+import { Button, Divider } from '@fluentui/react-components';
 import ImportTopic from './components/ImportTopic';
 
 // initializeIcons();
@@ -25,35 +25,42 @@ function App() {
     <Router>
       <div style={{ padding: '20px' }}>
         <h1>English Learning App</h1>
-        <nav style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div>
-            <Link to="/">
-              <Button
-                style={{ marginRight: 6, marginTop: 6 }}
-                appearance="primary"
-              >
-                Vocabulary
-              </Button>
-            </Link>
-            <Link to="/quiz">
-              <Button
-                appearance="primary"
-                style={{ marginRight: 6, marginTop: 6 }}
-              >
-                Quiz
-              </Button>
-            </Link>
-          </div>
-          <div>
+        <nav
+          style={
+            {
+              // display: 'flex',
+              // justifyContent: '',
+              // alignContent: '',
+            }
+          }
+        >
+          <Link to="/">
             <Button
               style={{ marginRight: 6, marginTop: 6 }}
-              onClick={downloadJSONFile}
+              appearance="primary"
             >
-              Export
+              Vocabulary
             </Button>
+          </Link>
+          <Link to="/quiz">
+            <Button
+              appearance="primary"
+              style={{ marginRight: 6, marginTop: 6 }}
+            >
+              Quiz
+            </Button>
+          </Link>
+          {/* <Divider vertical style={{ height: '100%' }}>
+            Text
+          </Divider> */}
+          <Button
+            style={{ marginRight: 6, marginTop: 6 }}
+            onClick={downloadJSONFile}
+          >
+            Export
+          </Button>
 
-            <ImportTopic />
-          </div>
+          <ImportTopic />
         </nav>
         <Routes>
           <Route path="/" element={<Vocabulary />} />
